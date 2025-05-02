@@ -1,0 +1,50 @@
+# Arquivo de ajuda gerado pelo Spring Boot
+HELP.md
+
+# Variáveis de ambiente
+.env
+
+# Diretórios de build
+target/
+build/
+!**/src/main/**/target/
+!**/src/test/**/target/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Maven Wrapper - garantir que os arquivos do wrapper estejam versionados
+# (não ignore o diretório .mvn/wrapper e seus arquivos necessários)
+!mvnw
+!mvnw.cmd
+!.mvn/wrapper/maven-wrapper.jar
+!.mvn/wrapper/maven-wrapper.properties
+
+# IDEs
+
+### Spring Tool Suite (STS)
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+### NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code
+.vscode/
+
+# Docker volumes e dados locais
+.data/
