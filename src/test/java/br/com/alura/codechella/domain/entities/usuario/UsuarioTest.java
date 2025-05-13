@@ -1,5 +1,6 @@
 package br.com.alura.codechella.domain.entities.usuario;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -46,5 +47,16 @@ class UsuarioTest {
         
         usuario = usuarioBuilder.incluiEndereco("12345-000", 1708, "apto 34");
         assertEquals(usuario.getEndereco().getComplemento(), "apto 34");
+    }
+    
+    @Test
+    void naoDeveCadastrarUsuarioComMenosDe18anos() {
+        LocalDate dataNascimento = LocalDate.now().minusYears(17);
+        IllegalArgumentException exception = Assertions.assertThrows(
+            IllegalArgumentException.class, () -> {
+                new Usuario("123.456.789-09", "John Doe", dataNascimento, "john.doe@email.com");
+            }
+        );
+        Assertions.assertEquals("Usuário deve ter pelo menos 18 anos de idade!", exception.getMessage());
     }
 }
