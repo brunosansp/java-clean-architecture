@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class UsuarioTest {
+class UsuarioEntityTest {
     @Test
     void deveLancarExcecaoParaCpfInvalido() {
         assertThrows(IllegalArgumentException.class, () -> {
