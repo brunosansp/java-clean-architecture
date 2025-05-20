@@ -5,14 +5,21 @@ import br.com.alura.codechella.application.infra.gateways.RepositorioDeUsuarioJp
 import br.com.alura.codechella.application.infra.gateways.UsuarioEntityMapper;
 import br.com.alura.codechella.application.infra.percistense.UsuarioRepository;
 import br.com.alura.codechella.application.usecases.CriarUsuario;
+import br.com.alura.codechella.application.usecases.ListarUsuarios;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class UsuarioConfig {
+    
     @Bean
     CriarUsuario criarUsuario(RepositorioDeUsuario repositorioDeUsuario) {
         return new CriarUsuario(repositorioDeUsuario);
+    }
+    
+    @Bean
+    ListarUsuarios listarUsuarios(RepositorioDeUsuario repositorioDeUsuario) {
+        return new ListarUsuarios(repositorioDeUsuario);
     }
     
     @Bean
